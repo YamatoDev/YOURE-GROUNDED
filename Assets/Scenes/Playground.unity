@@ -1592,7 +1592,7 @@ Transform:
   m_GameObject: {fileID: 2051593176}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 0.521}
+  m_LocalPosition: {x: 0, y: 1, z: 0.521}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1613,17 +1613,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  airControlMultiplier: 0.5
   jumpForce: 5
+  jumpCooldown: 0.2
   gravityForce: 1
-  moveDirection: {x: 0, y: 0, z: 0}
+  groundCheck: {fileID: 820069844}
   playerBody: {fileID: 2051593180}
   cameraTransform: {fileID: 623989992}
-  MouseDelta: {x: 0, y: 0}
-  xRotation: 0
   mouseSensitivity: 100
-  groundCheck: {fileID: 820069844}
-  jumpTimer: 2
-  jumpTime: 0
+  mouseSmoothTime: 0.05
+  firstPersonCam: {fileID: 0}
+  thirdPersonCam: {fileID: 0}
 --- !u!54 &2051593182
 Rigidbody:
   m_ObjectHideFlags: 0

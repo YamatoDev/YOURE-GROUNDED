@@ -746,6 +746,10 @@ PrefabInstance:
       propertyPath: reflectionPlane
       value: 
       objectReference: {fileID: 1869728853}
+    - target: {fileID: 6891702379372982002, guid: 5ea40e9d3c4a3374b9315b04ef5cde99, type: 3}
+      propertyPath: reflectionPlane
+      value: 
+      objectReference: {fileID: 1869728853}
     - target: {fileID: 8231989265889644052, guid: 5ea40e9d3c4a3374b9315b04ef5cde99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 125
