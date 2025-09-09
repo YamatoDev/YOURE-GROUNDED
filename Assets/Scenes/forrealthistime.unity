@@ -824,7 +824,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 29a8cea9124e8d84a92b3cab38bde1ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 208.69998
+      value: 211.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a8cea9124e8d84a92b3cab38bde1ff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -832,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a8cea9124e8d84a92b3cab38bde1ff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 44.7
+      value: 49.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 29a8cea9124e8d84a92b3cab38bde1ff, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5942,7 +5942,7 @@ PrefabInstance:
       objectReference: {fileID: 1535647028}
     - target: {fileID: 2782581823934344640, guid: 9ae9ffb986e93ec4da59c577225f32d0, type: 3}
       propertyPath: gravityForce
-      value: -9.8
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 2782581823934344640, guid: 9ae9ffb986e93ec4da59c577225f32d0, type: 3}
       propertyPath: firstPersonCam
@@ -6054,7 +6054,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11aebcef57a28704482a89bcf5cbffca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkDistance: 2
+  checkDistance: 1
   groundMask:
     serializedVersion: 2
     m_Bits: 64
