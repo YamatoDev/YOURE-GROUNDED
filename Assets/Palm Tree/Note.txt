@@ -1,0 +1,20 @@
+
+I Fábio S. Clemente (FabinhoSC) make this work I made available, of 3D models and their textures, for personal or commercial use.
+It can be used to create derived art if you want.
+You don't need to credit me. Although it would be appreciated, but it is not required.
+
+There are several models made in a Lowpoly style.
+
+It has simple versions and versions with "modular" parts for each model.
+
+All patterns have models in two versions. Solid in a single mesh, in the .fbx format, and also have a section divided into parts of "modular" meshes, so that they can be combined to create different sections, or the elimination of some parts is used, to create LODs if necessary in your project. These "modular" parts are also in .fbx.
+
+In addition, I send .blend files, with separate "modular" parts, of each group of models, for editing the variations and adaptations if desired.
+
+All these models of palm and coconut trees can use the same texture.
+
+In addition to the main texture, I send some texture variations in the download package, in addition to the .SVG file for creating variations, as needed to meet your projects.
+
+I hope they are useful in good projects.
+
+
