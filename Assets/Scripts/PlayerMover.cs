@@ -7,7 +7,6 @@ public class PlayerMover : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float airControlMultiplier = 0.5f;
     private Vector2 moveInput;
 
     [Header("Jumping")]
@@ -85,9 +84,8 @@ public class PlayerMover : MonoBehaviour
     private void HandleMovement()
     {
         Vector3 inputDir = new Vector3(moveInput.x, 0f, moveInput.y).normalized;
-        float speed = groundCheck.isGrounded ? moveSpeed : moveSpeed * airControlMultiplier;
 
-        Vector3 worldMove = transform.TransformDirection(inputDir) * speed;
+        Vector3 worldMove = transform.TransformDirection(inputDir) * moveSpeed;
         rb.linearVelocity = new Vector3(worldMove.x, rb.linearVelocity.y, worldMove.z);
 
         float maxSpeed = 20f;
@@ -134,15 +132,21 @@ public class PlayerMover : MonoBehaviour
         float mouseX = currentMouseDelta.x * mouseSensitivity * Time.deltaTime;
         float mouseY = currentMouseDelta.y * mouseSensitivity * Time.deltaTime;
 
-        // Pitch (camera only — only affects first-person camera)
+        // Pitch (up/down)
+        xRotation -= mouseY;
+
         if (activeCamera == firstPersonCam)
         {
-            xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
             cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         }
+        else if (activeCamera == thirdPersonCam)
+        {
+            xRotation = Mathf.Clamp(xRotation, -30f, 45f); // not too much
+            cameraTransform.parent.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        }
 
-        // Yaw (player body always rotates)
+        // Yaw (always rotates the player body)
         playerBody.Rotate(Vector3.up * mouseX);
     }
 

@@ -2,28 +2,15 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    public bool isGrounded = false;
+    [Header("Ground Check Settings")]
+    [SerializeField] private float checkDistance = 0.2f; 
+    [SerializeField] private LayerMask groundMask;
+
+    [SerializeField] public bool isGrounded = false;
 
     void Update()
     {
-        Debug.Log(isGrounded);
-    }
-
-    private void OnTriggerStay(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("Player is grounded!");
-            isGrounded = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("Player is on the air!");
-            isGrounded = false;
-        }
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, checkDistance, groundMask);
+        Debug.DrawRay(transform.position, Vector3.down * checkDistance, isGrounded ? Color.green : Color.red);
     }
 }
