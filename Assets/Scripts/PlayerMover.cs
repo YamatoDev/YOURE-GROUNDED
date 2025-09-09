@@ -51,7 +51,6 @@ public class PlayerMover : MonoBehaviour
 
     void Update()
     {
-        HandleCameraSwitch();
         HandleLook();
     }
 
@@ -77,6 +76,14 @@ public class PlayerMover : MonoBehaviour
         if (context.performed && groundCheck.isGrounded && canJump)
         {
             Jump();
+        }
+    }
+
+    public void OnChangeCam(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            HandleCameraSwitch();
         }
     }
 
@@ -153,20 +160,17 @@ public class PlayerMover : MonoBehaviour
     // --- Camera Switching ---
     private void HandleCameraSwitch()
     {
-        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        if (activeCamera == firstPersonCam)
         {
-            if (activeCamera == firstPersonCam)
-            {
-                firstPersonCam.enabled = false;
-                thirdPersonCam.enabled = true;
-                activeCamera = thirdPersonCam;
-            }
-            else
-            {
-                thirdPersonCam.enabled = false;
-                firstPersonCam.enabled = true;
-                activeCamera = firstPersonCam;
-            }
+            firstPersonCam.enabled = false;
+            thirdPersonCam.enabled = true;
+            activeCamera = thirdPersonCam;
+        }
+        else
+        {
+            thirdPersonCam.enabled = false;
+            firstPersonCam.enabled = true;
+            activeCamera = firstPersonCam;
         }
     }
 }
